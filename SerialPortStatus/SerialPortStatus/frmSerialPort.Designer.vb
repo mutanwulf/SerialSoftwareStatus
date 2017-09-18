@@ -24,16 +24,16 @@ Partial Class frmSerialPort
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSerialPort))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.tbcSerial = New System.Windows.Forms.TabControl()
-        Me.tpSerial = New System.Windows.Forms.TabPage()
-        Me.tpSettings = New System.Windows.Forms.TabPage()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tslStatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.btnOpen = New System.Windows.Forms.Button()
-        Me.rtbSerialOutput = New System.Windows.Forms.RichTextBox()
-        Me.btnRead = New System.Windows.Forms.Button()
+        Me.tbcSerial = New System.Windows.Forms.TabControl()
+        Me.tpSerial = New System.Windows.Forms.TabPage()
         Me.cbxSerialPort = New System.Windows.Forms.ComboBox()
+        Me.btnRead = New System.Windows.Forms.Button()
+        Me.rtbSerialOutput = New System.Windows.Forms.RichTextBox()
+        Me.btnOpen = New System.Windows.Forms.Button()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.tpSettings = New System.Windows.Forms.TabPage()
         Me.StatusStrip1.SuspendLayout()
         Me.tbcSerial.SuspendLayout()
         Me.tpSerial.SuspendLayout()
@@ -47,6 +47,19 @@ Partial Class frmSerialPort
         Me.StatusStrip1.Size = New System.Drawing.Size(434, 22)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(39, 17)
+        Me.ToolStripStatusLabel1.Text = "Status"
+        '
+        'tslStatus
+        '
+        Me.tslStatus.Name = "tslStatus"
+        Me.tslStatus.Size = New System.Drawing.Size(380, 17)
+        Me.tslStatus.Spring = True
+        Me.tslStatus.Text = "..."
         '
         'tbcSerial
         '
@@ -76,54 +89,13 @@ Partial Class frmSerialPort
         Me.tpSerial.Text = "SerialPort"
         Me.tpSerial.UseVisualStyleBackColor = True
         '
-        'tpSettings
+        'cbxSerialPort
         '
-        Me.tpSettings.Location = New System.Drawing.Point(4, 22)
-        Me.tpSettings.Name = "tpSettings"
-        Me.tpSettings.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpSettings.Size = New System.Drawing.Size(402, 334)
-        Me.tpSettings.TabIndex = 1
-        Me.tpSettings.Text = "Einstellungen"
-        Me.tpSettings.UseVisualStyleBackColor = True
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(39, 17)
-        Me.ToolStripStatusLabel1.Text = "Status"
-        '
-        'tslStatus
-        '
-        Me.tslStatus.Name = "tslStatus"
-        Me.tslStatus.Size = New System.Drawing.Size(380, 17)
-        Me.tslStatus.Spring = True
-        Me.tslStatus.Text = "..."
-        '
-        'btnRefresh
-        '
-        Me.btnRefresh.Location = New System.Drawing.Point(6, 297)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(106, 31)
-        Me.btnRefresh.TabIndex = 1
-        Me.btnRefresh.Text = "Aktualisieren"
-        Me.btnRefresh.UseVisualStyleBackColor = True
-        '
-        'btnOpen
-        '
-        Me.btnOpen.Location = New System.Drawing.Point(290, 297)
-        Me.btnOpen.Name = "btnOpen"
-        Me.btnOpen.Size = New System.Drawing.Size(106, 31)
-        Me.btnOpen.TabIndex = 2
-        Me.btnOpen.Text = "Öffnen"
-        Me.btnOpen.UseVisualStyleBackColor = True
-        '
-        'rtbSerialOutput
-        '
-        Me.rtbSerialOutput.Location = New System.Drawing.Point(6, 55)
-        Me.rtbSerialOutput.Name = "rtbSerialOutput"
-        Me.rtbSerialOutput.Size = New System.Drawing.Size(390, 228)
-        Me.rtbSerialOutput.TabIndex = 3
-        Me.rtbSerialOutput.Text = ""
+        Me.cbxSerialPort.FormattingEnabled = True
+        Me.cbxSerialPort.Location = New System.Drawing.Point(6, 19)
+        Me.cbxSerialPort.Name = "cbxSerialPort"
+        Me.cbxSerialPort.Size = New System.Drawing.Size(148, 21)
+        Me.cbxSerialPort.TabIndex = 5
         '
         'btnRead
         '
@@ -134,13 +106,42 @@ Partial Class frmSerialPort
         Me.btnRead.Text = "Lesen"
         Me.btnRead.UseVisualStyleBackColor = True
         '
-        'cbxSerialPort
+        'rtbSerialOutput
         '
-        Me.cbxSerialPort.FormattingEnabled = True
-        Me.cbxSerialPort.Location = New System.Drawing.Point(6, 19)
-        Me.cbxSerialPort.Name = "cbxSerialPort"
-        Me.cbxSerialPort.Size = New System.Drawing.Size(148, 21)
-        Me.cbxSerialPort.TabIndex = 5
+        Me.rtbSerialOutput.Location = New System.Drawing.Point(6, 55)
+        Me.rtbSerialOutput.Name = "rtbSerialOutput"
+        Me.rtbSerialOutput.Size = New System.Drawing.Size(390, 228)
+        Me.rtbSerialOutput.TabIndex = 3
+        Me.rtbSerialOutput.Text = ""
+        '
+        'btnOpen
+        '
+        Me.btnOpen.Enabled = False
+        Me.btnOpen.Location = New System.Drawing.Point(290, 297)
+        Me.btnOpen.Name = "btnOpen"
+        Me.btnOpen.Size = New System.Drawing.Size(106, 31)
+        Me.btnOpen.TabIndex = 2
+        Me.btnOpen.Text = "Öffnen"
+        Me.btnOpen.UseVisualStyleBackColor = True
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(6, 297)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(106, 31)
+        Me.btnRefresh.TabIndex = 1
+        Me.btnRefresh.Text = "Aktualisieren"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'tpSettings
+        '
+        Me.tpSettings.Location = New System.Drawing.Point(4, 22)
+        Me.tpSettings.Name = "tpSettings"
+        Me.tpSettings.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpSettings.Size = New System.Drawing.Size(402, 334)
+        Me.tpSettings.TabIndex = 1
+        Me.tpSettings.Text = "Einstellungen"
+        Me.tpSettings.UseVisualStyleBackColor = True
         '
         'frmSerialPort
         '

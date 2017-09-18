@@ -36,6 +36,9 @@ Public Class frmSerialPort
         ' Receive strings from a serial port.
         Dim returnStr As String = ""
 
+        If _com.Length < 3 Then
+            Return "Kein COM-Port gewählt!"
+        End If
         Dim com1 As IO.Ports.SerialPort = Nothing
         Try
             com1 = My.Computer.Ports.OpenSerialPort(_com)
@@ -58,6 +61,15 @@ Public Class frmSerialPort
     End Function
 
     Private Sub btnRead_Click(sender As System.Object, e As System.EventArgs) Handles btnRead.Click
-        rtbSerialOutput.Text = ReceiveSerialData("Com4")
+        '   rtbSerialOutput.Text = ReceiveSerialData("Com4")
+        If cbxSerialPort.Text <> "" And cbxSerialPort.Text <> Nothing And cbxSerialPort.Text.Length < 7 Then
+            rtbSerialOutput.Text = ReceiveSerialData(cbxSerialPort.Text)
+        Else
+            rtbSerialOutput.Text = "kein COM-Port gewählt!"
+        End If
+    End Sub
+
+    Private Sub frmSerialPort_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        GetSerialPortNames()
     End Sub
 End Class

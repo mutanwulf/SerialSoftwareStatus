@@ -1,9 +1,0 @@
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\bin\Debug\SerialPortStatus.exe
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\bin\Debug\SerialPortStatus.pdb
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\bin\Debug\SerialPortStatus.xml
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\obj\x86\Debug\WindowsApplication1.Resources.resources
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\obj\x86\Debug\SerialPortStatus.vbproj.GenerateResource.Cache
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\obj\x86\Debug\SerialPortStatus.exe
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\obj\x86\Debug\SerialPortStatus.xml
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\obj\x86\Debug\SerialPortStatus.pdb
-C:\Vaillant\Marcuss\GIT\Software\SerialPortStatus\SerialPortStatus\obj\x86\Debug\WindowsApplication1.frmSerialPort.resources
